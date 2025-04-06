@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "daisyui"{
+    
+        themes: light --default, dark --prefersdark, cupcake, coffee,light, dark, cupcake, bumblebee, emerald, corporate, synthwave, retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy, wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee, winter, dim, nord, sunset
+}
+@utility font-quicksand{
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@utility font-censored {
+  font-family: "Bytesized", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 3px; 
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #888; 
+}
