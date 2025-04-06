@@ -33,8 +33,6 @@ app.use(cors({
 // coustom middleware as a protect route
 app.use("/api",checkToken("uid"))
 
-app.get("/",(req,res)=>{res.send("Home page")})
-
 // Routes
 app.use("/auth",authRouter)
 app.use("/api/users",messageRouter)
