@@ -46,7 +46,7 @@ const ChatContainer = () => {
                                             <div className='h-full'>
                                                 <form className='flex justify-between w-[350px] sm:w-[500px] absolute px-3 bg-base-100/20' id='myForm' method="dialog">
                                                 <div className="font-bold  text-xl  p-2 ">{showDP.fullName}</div>
-                                                <span onClick={() => document.getElementById("myForm").submit()}  className=" btn flex justify-center items-center h-[40px] w-[40px] p-3 cursor-pointer rounded-full  btn-ghost  right-2 top-0.5 font-extrabold text-xl">✕</span>
+                                                <span onClick={()=>{document.getElementById("myForm").submit(); setShowDP(!showDP)}}  className=" btn flex justify-center items-center h-[40px] w-[40px] p-3 cursor-pointer rounded-full  btn-ghost  right-2 top-0.5 font-extrabold text-xl">✕</span>
                                             </form>
                                                 <img className="h-[350px] w-[350px] sm:h-[500px] sm:w-[500px] object-cover cursor-zoom-in" src={!showDP.profileImg?"/avatar.png":showDP.profileImg} />
                                             </div>
@@ -72,7 +72,7 @@ const ChatContainer = () => {
                                         <div className="sm:w-10 w-0  rounded-full ">
                                             <img
                                                 alt="ProfileImage"
-                                                src={message.senderId===selectedUser._id?selectedUser.profileImg: authUser.profileImg || "avatar.png"} />
+                                                src={message.senderId===selectedUser._id?selectedUser.profileImg || "/avatar.png": authUser.profileImg || "avatar.png"} />
                                         </div>
                                     </div>
                                     <div className="chat-header">
@@ -91,7 +91,7 @@ const ChatContainer = () => {
                                         )}
                                     </div>
                                     <div className="chat-footer opacity-50">
-                                        {message.senderId===selectedUser._id?"": "Dilivered"}
+                                        {message.senderId===selectedUser._id?"": "Delivered"}
                                         <time className="text-xs opacity-80">
                                             {formatTime(message.createdAt)}
                                         </time>

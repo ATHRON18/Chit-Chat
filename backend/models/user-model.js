@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
         type : String,
         default : null
     },
+    contactcs:[{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "Users",
+    }]
     // role : {
     //     type : String,
     //     enum : "USER" || "ADMIN",
